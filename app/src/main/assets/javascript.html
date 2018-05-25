@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carson_Ho</title>
+
+    // JS代码
+    <script>
+    // Android需要调用的方法
+    function callJS(){
+      alert("Android调用了JS的callJS方法");
+    }
+
+    function callAndroid(){
+       // 由于对象映射，所以调用AndroidCall对象等于调用Android映射的对象
+       AndroidCall.hello("js调用了android中的hello()方法");
+     }
+
+     function callAndroid1(){
+         /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+         document.location = "js://webview?arg1=111&arg2=222";
+     }
+
+
+    </script>
+
+</head>
+
+<!-- 点击按钮则调用callAndroid（）方法  -->
+<body>
+     <button type="button" id="button1" onclick="callJS()">点击调用了JS的callJS方法</button>
+
+     <button type="button" id="button2" onclick="callAndroid()">点击调用Android代码</button>
+
+     <button type="button" id="button3" onclick="callAndroid1()">点击调用Android代码1</button>
+
+</body>
+
+</html>
